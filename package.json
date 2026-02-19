@@ -1,0 +1,26 @@
+{
+    "name": "himalaya-monorepo",
+    "private": true,
+    "workspaces": [
+        "frontend",
+        "backend",
+        "admin"
+    ],
+    "scripts": {
+        "dev:frontend": "npm run dev --workspace=frontend",
+        "dev:backend": "npm run dev --workspace=backend",
+        "dev:admin": "npm run dev --workspace=admin",
+        "install:all": "npm install",
+        "build:frontend": "npm run build --workspace=frontend",
+        "build:admin": "npm run build --workspace=admin",
+        "build:all": "npm run build:frontend && npm run build:admin",
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:admin\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "framer": "^2.4.1",
+        "motion": "^12.33.0"
+    }
+}
